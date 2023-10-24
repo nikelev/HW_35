@@ -14,37 +14,25 @@ public class DateSortTest {
     @BeforeEach
     void setUp() {
         comparator = (s1, s2) -> {
-            int a= Integer.parseInt(s1.substring(s1.length()-4)) ;
-            int b= Integer.parseInt(s2.substring(s2.length()-4)) ;
+            int a = Integer.parseInt(s1.substring(s1.length() - 4));
+            int b = Integer.parseInt(s2.substring(s2.length() - 4));
+            int c = Integer.parseInt((s1.substring(s1.length() - 7, s1.length() - 5)));
+            int d = Integer.parseInt((s1.substring(s1.length() - 7, s1.length() - 5)));
+            int f = Integer.parseInt((s1.substring(s1.length() - 10, s1.length() - 8)));
+            int e = Integer.parseInt((s1.substring(s1.length() - 10, s1.length() - 8)));
 
-            if (a>b){
-                return -1;
-             }
-            if (a<b){
-                return -1;
-            }
-
-              a= Integer.parseInt((s1.substring(s1.length()-7, s1.length()-5))) ;
-            b= Integer.parseInt((s1.substring(s1.length()-7, s1.length()-5))) ;
-              if (a>b){
-                  return 1;
-              }
-              if (a<b){
-                  return -1;
-              }
-            a= Integer.parseInt((s1.substring(s1.length()-10, s1.length()-8))) ;
-            b= Integer.parseInt((s1.substring(s1.length()-10, s1.length()-8))) ;
-
-            if (a>b){
+            if (a > b) {
                 return 1;
             }
-            if (a<b){
-                return -1;
+            if (a == b && c > d) {
+                return 1;
+            }
+            if (a == b && c == d && f > e) {
+                return 1;
             }
 
 
             return 0;
-
 
 
         };
@@ -74,8 +62,8 @@ public class DateSortTest {
 
 //        System.out.println(Arrays.toString(dates));
 
-         Arrays.sort(dates, comparator);
-        System.out.println(Arrays.toString(dates));
-//        assertArrayEquals(expected, dates);
+        Arrays.sort(dates, comparator);
+         System.out.println(Arrays.toString(dates));
+        assertArrayEquals(expected, dates);
     }
 }
