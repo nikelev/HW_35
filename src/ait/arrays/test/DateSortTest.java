@@ -21,14 +21,14 @@ public class DateSortTest {
             int f = Integer.parseInt((s1.substring(s1.length() - 10, s1.length() - 8)));
             int e = Integer.parseInt((s2.substring(s2.length() - 10, s2.length() - 8)));
 
-            if (a > b) {
-                return 1;
+            if (a < b) {
+                return -1;
             }
-            if (a == b && c > d) {
-                return 1;
+            if (a == b && c < d) {
+                return -1;
             }
-            if (a == b && c == d && f > e) {
-                return 1;
+            if (a == b && c == d && f < e) {
+                return -1;
             }
 
 
