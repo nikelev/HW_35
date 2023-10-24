@@ -17,9 +17,9 @@ public class DateSortTest {
             int a = Integer.parseInt(s1.substring(s1.length() - 4));
             int b = Integer.parseInt(s2.substring(s2.length() - 4));
             int c = Integer.parseInt((s1.substring(s1.length() - 7, s1.length() - 5)));
-            int d = Integer.parseInt((s1.substring(s1.length() - 7, s1.length() - 5)));
+            int d = Integer.parseInt((s2.substring(s2.length() - 7, s2.length() - 5)));
             int f = Integer.parseInt((s1.substring(s1.length() - 10, s1.length() - 8)));
-            int e = Integer.parseInt((s1.substring(s1.length() - 10, s1.length() - 8)));
+            int e = Integer.parseInt((s2.substring(s2.length() - 10, s2.length() - 8)));
 
             if (a > b) {
                 return 1;
@@ -64,6 +64,6 @@ public class DateSortTest {
 
         Arrays.sort(dates, comparator);
          System.out.println(Arrays.toString(dates));
-        assertArrayEquals(expected, dates);
+         assertArrayEquals(expected, dates);
     }
 }
